@@ -41,5 +41,5 @@ Sumber: Kaggle - [Fashion Boutique Dataset](https://www.kaggle.com/datasets/prat
 - Ada brand yang return rate nya tinggi meski rating lumayan: kemungkinan masalah di ukuran, warna, atau harapan konsumen yang tidak sesuai.
 - Range diskon tertentu memiliki return rate tinggi: diskon terlalu besar belum tentu paling efektif.
 - Beberapa brand atau kategori memiliki permintaan tinggi di musim tertentu: peluang untuk stok lebih banyak di periode tersebut.
-- Agustus adalah bulan dengan puncak penjualan tertinggi untuk setiap brand
-- Beberapa kategori dari suatu brand memiliki stok yang tinggi dengan range diskon rendah: naikkan range diskon untuk kategori tersebut untuk menghindari overstock
+- Agustus adalah bulan dengan puncak penjualan tertinggi untuk setiap brand.
+- Beberapa kategori dari suatu brand memiliki stok yang tinggi dengan range diskon rendah: naikkan range diskon untuk kategori tersebut untuk menghindari overstock.
