@@ -6,7 +6,7 @@
 Menganalisis data penjualan untuk menemukan tren musiman dan produk terlaris.
 
 ## Dataset
-Sumber: Kaggle - [Dataset](https://www.kaggle.com/...)  
+Sumber: Kaggle - [Fashion Boutique Dataset]([https://www.kaggle.com/datasets/pratyushpuri/retail-fashion-boutique-data-sales-analytics-2025/data])  
 
 ## Langkah Pengerjaan
 1. Import data ke MySQL
@@ -21,4 +21,4 @@ Sumber: Kaggle - [Dataset](https://www.kaggle.com/...)
 [Link ke Tableau Public](https://public.tableau.com/...)
 
 ## Insight
-- Desember = penjualan tertinggi  
+- Agustus = penjualan tertinggi  
