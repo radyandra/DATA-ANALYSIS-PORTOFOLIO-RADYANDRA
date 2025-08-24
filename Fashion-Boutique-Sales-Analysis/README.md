@@ -17,10 +17,10 @@ Sumber: Kaggle - [Fashion Boutique Dataset](https://www.kaggle.com/datasets/prat
 5. Membuat dashboard interaktif
 
 ## Hasil
-![Dashboard1](images/Dashboard 1.png)
+![Dashboard1](Dashboard 1.png)
 [Link ke Tableau Public](https://public.tableau.com/views/project1_17556127461290/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
-![Dashboard2](images/Dashboard 2.png)
+![Dashboard2](Dashboard 2.png)
 [Link ke Tableau Public](https://public.tableau.com/views/project1_17556127461290/Dashboard2?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
 ## Insight
