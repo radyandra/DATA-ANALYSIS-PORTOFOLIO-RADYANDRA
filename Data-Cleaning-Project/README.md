@@ -27,7 +27,7 @@ Dataset yang digunakan:
 ## 📂 Data Cleaning Steps
 
 ### 1️⃣ MySQL
-File SQL: [`Data-Cleaning-Project/CLEANING DATA CAFE SALES_RADYANDRA.sql`](Data-Cleaning-Project/CLEANING DATA CAFE SALES_RADYANDRA.sql)  
+File SQL: [`Data-Cleaning-Project/CLEANING-DATA-CAFE-SALES-RADYANDRA.sql`](Data-Cleaning-Project/CLEANING-DATA-CAFE-SALES-RADYANDRA.sql)  
 Langkah:
 - Menghapus baris duplikat
 - Mengubah format tanggal
