@@ -1,8 +1,8 @@
-# 🧹 Data Cleaning Project (MySQL & Excel)
+# 🧹 Data Cleaning Project (MySQL)
 
 ## 📌 Project Overview
 Project ini bertujuan untuk membersihkan dataset mentah agar siap digunakan untuk analisis.  
-Proses cleaning dilakukan menggunakan **MySQL** atau **Microsoft Excel**.
+Proses cleaning dilakukan menggunakan **MySQL** .
 
 Dataset yang digunakan:
 1. Dirty Cafe Sales Dataset
