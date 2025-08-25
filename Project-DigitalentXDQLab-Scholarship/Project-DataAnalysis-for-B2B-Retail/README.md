@@ -3,9 +3,6 @@
 ## 📖 Latar Belakang
 xyz.com adalah perusahan rintisan B2B yang menjual berbagai produk tidak langsung kepada end user tetapi ke bisnis/perusahaan lainnya. Sebagai data-driven company, maka setiap pengambilan keputusan di xyz.com selalu berdasarkan data. Setiap quarter xyz.com akan mengadakan townhall dimana seluruh atau perwakilan divisi akan berkumpul untuk me-review performance perusahaan selama quarter terakhir.
 
-Contoh:
-> Data transaksi penjualan diperoleh dari [sumber data] yang masih memerlukan proses pembersihan. Proyek ini dilakukan untuk memastikan kualitas data sebelum digunakan untuk analisis lebih lanjut.
-
 ## 🎯 Tugas
 - Bagaimana pertumbuhan penjualan saat ini?
 - Apakah jumlah customers xyz.com semakin bertambah ?
@@ -48,13 +45,42 @@ Contoh:
 - Dari tabel orders_1 lakukan penjumlahan pada kolom quantity dengan fungsi aggregate sum() dan beri nama “total_penjualan”, kalikan kolom quantity dengan kolom priceEach kemudian jumlahkan hasil perkalian kedua kolom tersebut dan beri nama “revenue”
 - Perusahaan hanya ingin menghitung penjualan dari produk yang terkirim saja, jadi kita perlu mem-filter kolom ‘status’ sehingga hanya menampilkan order dengan status “Shipped”.
 - Lakukan Langkah 1 & 2, untuk tabel orders_2.
-
-```sql
+  ```sql
 SELECT SUM(quantity) AS total_penjualan, SUM(quantity*priceeach) AS revenue FROM orders_1
 WHERE status='Shipped';
 
 SELECT SUM(quantity) AS total_penjualan, SUM(quantity*priceeach) AS revenue FROM orders_2
 WHERE status='Shipped';
 
-
 ![Tabel](revenue_totalorder.png)
+
+## Menghitung Persentasi Keseluruhan Penjualan
+- Pilihlah kolom “orderNumber”, “status”, “quantity”, “priceEach” pada tabel orders_1, dan tambahkan kolom baru dengan nama “quarter” dan isi dengan value “1”. Lakukan yang sama dengan tabel orders_2, dan isi dengan value “2”, kemudian gabungkan kedua tabel tersebut.
+- Gunakan statement dari Langkah 1 sebagai subquery dan beri alias “tabel_a”.
+- Dari “tabel_a”, lakukan penjumlahan pada kolom “quantity” dengan fungsi aggregate sum() dan beri nama “total_penjualan”, dan kalikan kolom quantity dengan kolom priceEach kemudian jumlahkan hasil perkalian kedua kolom tersebut dan beri nama “revenue”
+- Filter kolom ‘status’ sehingga hanya menampilkan order dengan status “Shipped”.
+Kelompokkan total_penjualan berdasarkan kolom “quarter”, dan jangan lupa menambahkan kolom ini pada bagian select.
+```sql
+  SELECT 
+      quarter,
+      SUM(quantity) AS total_penjualan,
+      SUM(quantity * priceEach) AS revenue
+  FROM (
+      SELECT orderNumber, status, quantity, priceEach, 1 AS quarter
+      FROM orders_1
+      UNION ALL
+      SELECT orderNumber, status, quantity, priceEach, 2 AS quarter
+      FROM orders_2
+  ) AS tabel_a
+  WHERE status = 'Shipped'
+  GROUP BY quarter
+  ORDER BY quarter;
+
+
+## Perhitungan Growth Penjualan dan Revenue
+%Growth Penjualan = (6717 – 8694)/8694 = -22%
+%Growth Revenue = (607548320 – 799579310)/ 799579310 = -24%
+
+## 
+
+
