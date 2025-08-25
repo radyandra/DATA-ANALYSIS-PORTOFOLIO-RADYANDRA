@@ -29,7 +29,8 @@ Dari data yang sudah diberikan, dari pihak manajemen DQLab store ingin mengetahu
   WHERE YEAR(order_date) BETWEEN 2009 AND 2012 AND order_status='order finished'
   GROUP BY RIGHT(YEAR(order_date), 4)
   ORDER BY years;
-
+  
+```
 +-------+------------+-----------------+
 | years | sales      | number_of_order |
 +-------+------------+-----------------+
