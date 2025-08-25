@@ -20,7 +20,7 @@ Dataset yang digunakan:
 ---
 
 ## 🛠 Tools & Technologies
-- **Excel** → 
+- **Excel** → Get & Transform Data (Power Query), Change Data Type, Split Column by Delimiter, Replace Values, Remove Columns / Rows. 
 
 ---
 
@@ -28,20 +28,34 @@ Dataset yang digunakan:
 
 ### 1️⃣ Excel
 File Excel: [`Data-Cleaning-Project/Airline_Delay_Cause.csv`](Data-Cleaning-Project/Airline_Delay_Cause.csv)  
-Langkah:
-1. Import file csv ke microsoft excel. Kemudian klik 'Transform data'.
+Langkah-langkah:
+1. **Import file csv ke microsoft excel. Kemudian klik 'Transform data'.**
 ![langkah1](langkah1.png)
-2. Cek format data untuk mengetahui apakah sudah sesuai atau tidak. Kemudian close dan load data.
+
+2. **Cek format data untuk mengetahui apakah sudah sesuai atau tidak. Kemudian close dan load data.**
 ![langkah2](langkah2.png)
-3. Menggabungkan kolom 'year' dan kolom 'month' menggunakan rumus '=DATE(year; month; day)' dan memisalkan semua tanggal sama, yaitu '=DATE(year; month; 1)' dan menjadikan kolom baru dengan nama 'date'.
+
+3. **Menggabungkan kolom 'year' dan kolom 'month' menggunakan rumus '=DATE(year; month; day)' dan memisalkan semua tanggal sama, yaitu '=DATE(year; month; 1)' dan menjadikan kolom baru dengan nama 'date'.**
 ![langkah3](langkah3.png)
-4. Ubah format tanggal tersebut dengan klik kolom 'date' → klik 'Home' → pada menu 'Number' pilih 'more number formats' dan klik seperti pada gambar.
+
+4. **Ubah format tanggal tersebut dengan klik kolom 'date' → klik 'Home' → pada menu 'Number' pilih 'more number formats' dan klik seperti pada gambar.**
 ![langkah4](langkah4.png)
-5. Karena kolom 'airport_name' memiliki dua informasi yaitu nama bandara dan nama kota, pisahkan kolom tersebut menjadi dua bagian dengan mengklik kolom 'G' → klik 'Data' → klik 'Text to Columns' dan klik seperti pada gambar dengan memilih (:) sebagai tanda pemisah. Klik 'Finish' dan ubah nama kolom.
+
 ![langkah5](langkah5.png)
-6. Lakukan hal yang sama seperti langkah 5 untuk memisahkan informasi nama kota dan provinsi pada kolom 'city' dengan memilih (,) sebagai tanda pemisah.
+
+5. **Karena kolom 'airport_name' memiliki dua informasi yaitu nama bandara dan nama kota, pisahkan kolom tersebut menjadi dua bagian dengan mengklik kolom 'G' → klik 'Data' → klik 'Text to Columns' dan klik seperti pada gambar dengan memilih (:) sebagai tanda pemisah. Klik 'Finish' dan ubah nama kolom.**
 ![langkah6](langkah6.png)
-7. Standarisasi format teks menggunakan rumus '=TRIM(text)'
+
+6. **Lakukan hal yang sama seperti langkah 5 untuk memisahkan informasi nama kota dan provinsi pada kolom 'city' dengan memilih (,) sebagai tanda pemisah.**
+
+7. **Standarisasi format teks menggunakan rumus '=TRIM(text)'.**
 ![langkah7](langkah7.png)
-8. Hapus kolom yang tidak diperlukan
+
+8. **Hapus kolom yang tidak diperlukan.**
 ![langkah8](langkah8.png)
+
+---
+
+Setelah proses data cleaning selesai di Excel, dataset yang sudah bersih di-export ke Tableau untuk tahap data visualization. Di Tableau, data diolah menjadi dashboard interaktif yang menampilkan metrik utama dan visualisasi yang memudahkan analisis serta pengambilan keputusan.
+![us_flight_delay](us_flight_delay.png)
+Link Tableau Public: [https://public.tableau.com/views/USFlightDelay_17545342874120/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link]
