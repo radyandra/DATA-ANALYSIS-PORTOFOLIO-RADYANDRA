@@ -76,7 +76,7 @@ Kelompokkan total_penjualan berdasarkan kolom “quarter”, dan jangan lupa men
   GROUP BY quarter
   ORDER BY quarter;
   
-![revenue_totalorder](revenue_totalorder.png)
+![persentase_penjualan](persentase_penjualan.png)
 
 ## Perhitungan growth penjualan dan revenue
 %Growth Penjualan = (6717 – 8694)/8694 = -22%
