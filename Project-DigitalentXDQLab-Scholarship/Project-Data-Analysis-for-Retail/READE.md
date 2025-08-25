@@ -29,16 +29,16 @@ Dari data yang sudah diberikan, dari pihak manajemen DQLab store ingin mengetahu
   WHERE YEAR(order_date) BETWEEN 2009 AND 2012 AND order_status='order finished'
   GROUP BY RIGHT(YEAR(order_date), 4)
   ORDER BY years;
-  
-```
-+-------+------------+-----------------+
-| years | sales      | number_of_order |
-+-------+------------+-----------------+
-| 2009  | 4613872681 |            1244 |
-| 2010  | 4059100607 |            1248 |
-| 2011  | 4112036186 |            1178 |
-| 2012  | 4482983158 |            1254 |
-+-------+------------+-----------------+
+
+  ```sql
+ +-------+------------+-----------------+
+ | years | sales      | number_of_order |
+ +-------+------------+-----------------+
+ | 2009  | 4613872681 |            1244 |
+ | 2010  | 4059100607 |            1248 |
+ | 2011  | 4112036186 |            1178 |
+ | 2012  | 4482983158 |            1254 |
+ +-------+------------+-----------------+
 
 ## 1B. Overall performance by product sub category
 1. Memilih kolom yang relevan, yaitu tahun penjualan, sub kategori produk, dan total penjualannya.
