@@ -12,8 +12,6 @@ Dari data yang sudah diberikan, dari pihak manajemen DQLab store ingin mengetahu
 2A. Efektifitas dan efisiensi promosi yang dilakukan selama ini, dengan menghitung burn rate dari promosi yang dilakukan overall berdasarkan tahun
 2B. Efektifitas dan efisiensi promosi yang dilakukan selama ini, dengan menghitung burn rate dari promosi yang dilakukan overall berdasarkan sub-category
 
- Setelah melihat hasil analisa di Sub Bab 1 dan 2, selanjutnya dilakukan analisa terhadap customer DQLab. Analisa dari sisi customer dengan menggunakan metrics:
-
 3A. Analisa terhadap customer setiap tahunnya
 
 ## 1A. Overall performance by year
