@@ -55,7 +55,10 @@ Langkah-langkah:
 ![langkah8](langkah8.png)
 
 ---
+## Data Setelah Data Cleaning
+ [`Data-Cleaning-Project/Excel/Data_Cleaning_Airline_delay_cause.xlsx`](Data-Cleaning-Project/Excel/Data_Cleaning_Airline_delay_cause.xlsx)
 
+---
 Setelah proses data cleaning selesai di Excel, dataset yang sudah bersih di-export ke Tableau untuk tahap data visualization. Di Tableau, data diolah menjadi dashboard interaktif yang menampilkan metrik utama dan visualisasi yang memudahkan analisis serta pengambilan keputusan.
 ![us_flight_delay](us_flight_delay.png)
 Link Tableau Public: [https://public.tableau.com/views/USFlightDelay_17545342874120/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link]
