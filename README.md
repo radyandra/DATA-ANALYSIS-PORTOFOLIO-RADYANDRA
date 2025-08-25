@@ -44,7 +44,7 @@ Proyek pembersihan data menggunakan berbagai tools.
 
 ## 📞 Kontak
 - **Email**: [radyandra2401@gmail.com](mailto:radyandra2401@gmail.com)
-- **LinkedIn**: [linkedin.com/in/radyandra-dara-diranti](https://linkedin.com/in/radyandra-dara-diranti)
-- **Tableau Public**: [tableaupublic.com/profile/radyandra.dara.diranti](https://tableaupublic.com/profile/radyandra.dara.diranti)
+- **LinkedIn**: [https://www.linkedin.com/in/radyandra-dara-diranti-643a87220](https://www.linkedin.com/in/radyandra-dara-diranti-643a87220)
+- **Tableau Public**: [https://public.tableau.com/app/profile/radyandra.dara.diranti/vizzes](https://public.tableau.com/app/profile/radyandra.dara.diranti/vizzes)
 
 ---
