@@ -31,15 +31,15 @@ Dari data yang sudah diberikan, dari pihak manajemen DQLab store ingin mengetahu
    ORDER BY years;
    ```
    ```sql
-    +-------+------------+-----------------+
-  | years | sales      | number_of_order |
-  +-------+------------+-----------------+
-  | 2009  | 4613872681 |            1244 |
-  | 2010  | 4059100607 |            1248 |
-  | 2011  | 4112036186 |            1178 |
-  | 2012  | 4482983158 |            1254 |
-  +-------+------------+-----------------+
-  
+   +-------+------------+-----------------+
+   | years | sales      | number_of_order |
+   +-------+------------+-----------------+
+   | 2009  | 4613872681 |            1244 |
+   | 2010  | 4059100607 |            1248 |
+   | 2011  | 4112036186 |            1178 |
+   | 2012  | 4482983158 |            1254 |
+   +-------+------------+-----------------+
+   ```
   
 ## 1B. Overall performance by product sub category
 1. Memilih kolom yang relevan, yaitu tahun penjualan, sub kategori produk, dan total penjualannya.
@@ -55,8 +55,9 @@ Dari data yang sudah diberikan, dari pihak manajemen DQLab store ingin mengetahu
   WHERE YEAR(order_date) IN (2011, 2012) AND order_status='order finished'  
   GROUP BY years, product_sub_category
   ORDER BY years, sales DESC;             -- Urut tahun, lalu sales terbesar dulu
-
-+-------+--------------------------------+-----------+
+  ```
+  ```sql
+ +-------+--------------------------------+-----------+
 | years | product_sub_category           | sales     |
 +-------+--------------------------------+-----------+
 |  2011 | Chairs & Chairmats             | 622962720 |
@@ -94,6 +95,7 @@ Dari data yang sudah diberikan, dari pihak manajemen DQLab store ingin mengetahu
 |  2012 | Labels                         |  10007040 |
 |  2012 | Rubber Bands                   |   3837880 |
 +-------+--------------------------------+-----------+
+  ```
 
 ## 2A. Promotion effectiveness and efficiency by years
 1. Menggunakan `WITH` untuk membuat sebuah tabel sementara yang disebut `sales_summary` dengan memilih kolom tahun dari `order_date` dengan fungsi `YEAR()`, menghitung total penjualan (`SUM(sales)`) serta total nilai diskon (`SUM(discount_value)`) untuk setiap tahun.
