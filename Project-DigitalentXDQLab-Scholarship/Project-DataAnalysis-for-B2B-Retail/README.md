@@ -23,4 +23,23 @@ Contoh:
 7. Menggunakan subquery untuk menyimpan hasil sementara untuk digunakan kembali dalam query.
 
 ## Tabel yang digunakan
-[!Tabel](...)
+[!Tabel](tabel.png)
+1. Tabel orders_1 : Berisi data terkait transaksi penjualan periode quarter 1 (Jan – Mar 2004)
+2. Tabel Orders_2 : Berisi data terkait transaksi penjualan periode quarter 2 (Apr – Jun 2004)
+3. Tabel Customer : Berisi data profil customer yang mendaftar menjadi customer xyz.com
+
+## Memahami Tabel
+- Mengecek tabel orders_1 :SELECT * FROM orders_1 limit 5;
+  ```sql
+  SELECT* FROM orders_1
+  limit 5;
+- Mengecek tabel orders_2 :SELECT * FROM orders_2 limit 5;
+  ``sql
+  SELECT* FROM orders_2
+  limit 5;
+- Mengecek tabel customer :SELECT * FROM customer limit 5;
+  ```sql
+  SELECT* FROM customer
+  limit 5;
+
+  [!MemahamiTabel](pahamtabel.png)
