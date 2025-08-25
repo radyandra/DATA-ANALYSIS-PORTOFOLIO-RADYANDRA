@@ -113,8 +113,9 @@ Langkah:
 DELETE 
 FROM cafe_sales2
 WHERE Item='' AND Payment_Method='' AND Location='' AND Transaction_Date='';
+
 - Menghapus kolom yang tidak diperlukan
-Contoh Query:
-```sql
-ALTER TABLE cafe_sales2
-DROP COLUMN row_num;
+	Contoh Query:
+	```sql
+	ALTER TABLE cafe_sales2
+	DROP COLUMN row_num;
