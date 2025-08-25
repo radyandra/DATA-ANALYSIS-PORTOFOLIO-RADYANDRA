@@ -30,8 +30,6 @@ Dari data yang sudah diberikan, dari pihak manajemen DQLab store ingin mengetahu
    GROUP BY RIGHT(YEAR(order_date), 4)
    ORDER BY years;
 
-   Hasilnya:
-   ```sql
     +-------+------------+-----------------+
   | years | sales      | number_of_order |
   +-------+------------+-----------------+
