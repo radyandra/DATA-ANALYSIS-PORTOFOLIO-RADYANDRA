@@ -80,6 +80,9 @@ SELECT DISTINCT Payment_Method FROM cafe_sales2;
 
 SELECT DISTINCT Location FROM cafe_sales2;
 
+ALTER TABLE cafe_sales2
+MODIFY COLUMN Transaction_Date DATE;
+
 #Karena data sudah terstandarisasi maka dilanjutkan mencari missing values
 -- Missing Values
 SELECT* FROM cafe_sales2
