@@ -119,3 +119,8 @@ Langkah:
 	ALTER TABLE cafe_sales2
 	DROP COLUMN row_num;
 
+---
+## Data Setelah Data Cleaning
+- File: [`Data-Cleaning-Project/MySQL/Data_cleaning_cafesales2.csv`](Data-Cleaning-Project/MySQL/Data_cleaning_cafesales2.csv)
+- Ukuran data: [1.000 baris & 8 kolom] 
+- Format: [CSV]
