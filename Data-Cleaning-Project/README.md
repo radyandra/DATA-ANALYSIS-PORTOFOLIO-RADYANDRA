@@ -46,15 +46,15 @@ Langkah:
 	PARTITION BY Transaction_ID, Item, Quantity, Price_Per_Unit, Total_Spent, Payment_Method, Location, Transaction_Date ) AS row_num
 	FROM cafe_sales;
  
- 	WITH duplicate_cte AS
-(
-	SELECT*,
-	ROW_NUMBER() OVER(
-	PARTITION BY Transaction_ID, Item, Quantity, Price_Per_Unit, Total_Spent, Payment_Method, Location, Transaction_Date ) AS row_num
-	FROM cafe_sales
-)
-SELECT* FROM duplicate_cte
-WHERE row_num>1;
+	 	WITH duplicate_cte AS
+	(
+		SELECT*,
+		ROW_NUMBER() OVER(
+		PARTITION BY Transaction_ID, Item, Quantity, Price_Per_Unit, Total_Spent, Payment_Method, Location, Transaction_Date ) AS row_num
+		FROM cafe_sales
+	)
+	SELECT* FROM duplicate_cte
+	WHERE row_num>1;
 - Membuat tabel baru dengan menginput data yang sudah dikelompokkan dan diurutkan sebelumnya, kemudian pilih baris dengan row_num > 1
   Contoh Query:
 	```sql
