@@ -56,7 +56,9 @@ Langkah-langkah:
 
 ---
 ## Data Setelah Data Cleaning
- [`Data-Cleaning-Project/Excel/Data_Cleaning_Airline_delay_cause.xlsx`](Data-Cleaning-Project/Excel/Data_Cleaning_Airline_delay_cause.xlsx)
+- File: [`Data-Cleaning-Project/Excel/Data_Cleaning_Airline_delay_cause.xlsx`](Data-Cleaning-Project/Excel/Data_Cleaning_Airline_delay_cause.xlsx)
+- Ukuran data: [101.315 baris & 15 kolom] 
+- Format: [XLSX]
 
 ---
 Setelah proses data cleaning selesai di Excel, dataset yang sudah bersih di-export ke Tableau untuk tahap data visualization. Di Tableau, data diolah menjadi dashboard interaktif yang menampilkan metrik utama dan visualisasi yang memudahkan analisis serta pengambilan keputusan.
