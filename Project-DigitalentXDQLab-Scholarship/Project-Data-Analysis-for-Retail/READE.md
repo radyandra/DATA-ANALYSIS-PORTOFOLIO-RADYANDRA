@@ -57,7 +57,7 @@ Dari data yang sudah diberikan, dari pihak manajemen DQLab store ingin mengetahu
    ORDER BY years, sales DESC;             -- Urut tahun, lalu sales terbesar dulu
    ```
    ```sql
-   +-------+--------------------------------+-----------+
+     +-------+--------------------------------+-----------+
      | years | product_sub_category           | sales     |
      +-------+--------------------------------+-----------+
      |  2011 | Chairs & Chairmats             | 622962720 |
@@ -105,33 +105,35 @@ Dari data yang sudah diberikan, dari pihak manajemen DQLab store ingin mengetahu
 5. Urutkan berdasarkan tahun dengan klausa ORDER BY.
    ```sql
    -- Derived Table untuk menghitung total sales dan total promotion per tahun
-  WITH sales_summary AS (
-      SELECT 
-          YEAR(order_date) AS years,
-          SUM(sales) AS sales,
-          SUM(discount_value) AS promotion_value
-      FROM dqlab_sales_store
-    	WHERE order_status='order finished'
-      GROUP BY YEAR(order_date)
-  )
-  
-  -- Hitung burn rate berdasarkan derived table
-  SELECT 
-      years,
-      sales,
-      promotion_value,
-      ROUND((promotion_value / sales) * 100, 2) AS burn_rate_percentage
-  FROM sales_summary
-  ORDER BY years;
-
-+-------+------------+-----------------+----------------------+
-| years | sales      | promotion_value | burn_rate_percentage |
-+-------+------------+-----------------+----------------------+
-| 2009  | 4613872681 |       214330327 |                 4.65 |
-| 2010  | 4059100607 |       197506939 |                 4.87 |
-| 2011  | 4112036186 |       214611556 |                 5.22 |
-| 2012  | 4482983158 |       225867642 |                 5.04 |
-+-------+------------+-----------------+----------------------+
+   WITH sales_summary AS (
+       SELECT 
+           YEAR(order_date) AS years,
+           SUM(sales) AS sales,
+           SUM(discount_value) AS promotion_value
+       FROM dqlab_sales_store
+     	WHERE order_status='order finished'
+       GROUP BY YEAR(order_date)
+   )
+   
+   -- Hitung burn rate berdasarkan derived table
+   SELECT 
+       years,
+       sales,
+       promotion_value,
+       ROUND((promotion_value / sales) * 100, 2) AS burn_rate_percentage
+   FROM sales_summary
+   ORDER BY years;
+   ```
+   ```sql
+   +-------+------------+-----------------+----------------------+
+   | years | sales      | promotion_value | burn_rate_percentage |
+   +-------+------------+-----------------+----------------------+
+   | 2009  | 4613872681 |       214330327 |                 4.65 |
+   | 2010  | 4059100607 |       197506939 |                 4.87 |
+   | 2011  | 4112036186 |       214611556 |                 5.22 |
+   | 2012  | 4482983158 |       225867642 |                 5.04 |
+   +-------+------------+-----------------+----------------------+
+   ```
 
 ## 2B. Promotion effectiveness and efficiency by product sub category
 1. Menggunakan Common Table Expression (CTE) `WITH`  untuk membuat sebuah tabel sementara yang disebut `sales_summary` dengan memilih beberapa kolom, yaitu tahun dari tanggal pesanan (order_date) dengan fungsi YEAR, subkategori produk (product_sub_category), kategori produk (product_category), total penjualan (sales) dengan menggunakan fungsi SUM dan total nilai diskon (promotion_value) juga dengan fungsi SUM.
@@ -150,39 +152,41 @@ Dari data yang sudah diberikan, dari pihak manajemen DQLab store ingin mengetahu
     FROM dqlab_sales_store
     WHERE YEAR(order_date) = 2012 AND order_status='order finished'
     GROUP BY YEAR(order_date), product_sub_category, product_category
-  )
-  
-  SELECT
-      years,
-      product_sub_category,
-      product_category,
-      sales,
-      promotion_value,
-      ROUND((promotion_value / sales) * 100, 2) AS burn_rate_percentage
-  FROM sales_summary
-  ORDER BY sales DESC;  -- bisa diurutkan berdasarkan sales atau burn rate
+   )
    
-+-------+--------------------------------+------------------+-----------+-----------------+----------------------+
-| years | product_sub_category           | product_category | sales     | promotion_value | burn_rate_percentage |
-+-------+--------------------------------+------------------+-----------+-----------------+----------------------+
-|  2012 | Office Machines                | Technology       | 811427140 |        46616695 |                 5.75 |
-|  2012 | Chairs & Chairmats             | Furniture        | 654168740 |        26623882 |                 4.07 |
-|  2012 | Telephones and Communication   | Technology       | 422287514 |        18800188 |                 4.45 |
-|  2012 | Tables                         | Furniture        | 388993784 |        16348689 |                  4.2 |
-|  2012 | Binders and Binder Accessories | Office Supplies  | 363879200 |        22338980 |                 6.14 |
-|  2012 | Storage & Organization         | Office Supplies  | 356714140 |        18802166 |                 5.27 |
-|  2012 | Computer Peripherals           | Technology       | 308014340 |        15333293 |                 4.98 |
-|  2012 | Copiers and Fax                | Technology       | 292489800 |        14530870 |                 4.97 |
-|  2012 | Appliances                     | Office Supplies  | 266131100 |        14393300 |                 5.41 |
-|  2012 | Office Furnishings             | Furniture        | 178927480 |         8233849 |                  4.6 |
-|  2012 | Bookcases                      | Furniture        | 159984680 |        10024365 |                 6.27 |
-|  2012 | Paper                          | Office Supplies  | 126896160 |         6224694 |                 4.91 |
-|  2012 | Envelopes                      | Office Supplies  |  58629280 |         2334321 |                 3.98 |
-|  2012 | Pens & Art Supplies            | Office Supplies  |  43818480 |         2343501 |                 5.35 |
-|  2012 | Scissors, Rulers and Trimmers  | Office Supplies  |  36776400 |         2349280 |                 6.39 |
-|  2012 | Labels                         | Office Supplies  |  10007040 |          452245 |                 4.52 |
-|  2012 | Rubber Bands                   | Office Supplies  |   3837880 |          117324 |                 3.06 |
-+-------+--------------------------------+------------------+-----------+-----------------+----------------------+
+   SELECT
+       years,
+       product_sub_category,
+       product_category,
+       sales,
+       promotion_value,
+       ROUND((promotion_value / sales) * 100, 2) AS burn_rate_percentage
+   FROM sales_summary
+   ORDER BY sales DESC;  -- bisa diurutkan berdasarkan sales atau burn rate
+   ```
+   ```sql
+   +-------+--------------------------------+------------------+-----------+-----------------+----------------------+
+   | years | product_sub_category           | product_category | sales     | promotion_value | burn_rate_percentage |
+   +-------+--------------------------------+------------------+-----------+-----------------+----------------------+
+   |  2012 | Office Machines                | Technology       | 811427140 |        46616695 |                 5.75 |
+   |  2012 | Chairs & Chairmats             | Furniture        | 654168740 |        26623882 |                 4.07 |
+   |  2012 | Telephones and Communication   | Technology       | 422287514 |        18800188 |                 4.45 |
+   |  2012 | Tables                         | Furniture        | 388993784 |        16348689 |                  4.2 |
+   |  2012 | Binders and Binder Accessories | Office Supplies  | 363879200 |        22338980 |                 6.14 |
+   |  2012 | Storage & Organization         | Office Supplies  | 356714140 |        18802166 |                 5.27 |
+   |  2012 | Computer Peripherals           | Technology       | 308014340 |        15333293 |                 4.98 |
+   |  2012 | Copiers and Fax                | Technology       | 292489800 |        14530870 |                 4.97 |
+   |  2012 | Appliances                     | Office Supplies  | 266131100 |        14393300 |                 5.41 |
+   |  2012 | Office Furnishings             | Furniture        | 178927480 |         8233849 |                  4.6 |
+   |  2012 | Bookcases                      | Furniture        | 159984680 |        10024365 |                 6.27 |
+   |  2012 | Paper                          | Office Supplies  | 126896160 |         6224694 |                 4.91 |
+   |  2012 | Envelopes                      | Office Supplies  |  58629280 |         2334321 |                 3.98 |
+   |  2012 | Pens & Art Supplies            | Office Supplies  |  43818480 |         2343501 |                 5.35 |
+   |  2012 | Scissors, Rulers and Trimmers  | Office Supplies  |  36776400 |         2349280 |                 6.39 |
+   |  2012 | Labels                         | Office Supplies  |  10007040 |          452245 |                 4.52 |
+   |  2012 | Rubber Bands                   | Office Supplies  |   3837880 |          117324 |                 3.06 |
+   +-------+--------------------------------+------------------+-----------+-----------------+----------------------+
+   ```
 
 ## 3A. Customers transactions per year
 1. Memilih dua kolom untuk ditampilkan dalam hasil query yaitu kolom tahun dengan fungsi YEAR() dan menghitung jumlah pelanggan yang unik (tidak duplikat) dengan fungsi COUNT(DISTINCT...)
@@ -193,17 +197,19 @@ Dari data yang sudah diberikan, dari pihak manajemen DQLab store ingin mengetahu
    SELECT
     YEAR(order_date) AS years,
     COUNT(DISTINCT customer) AS number_of_customer
-  FROM dqlab_sales_store
-  WHERE YEAR(order_date) BETWEEN 2009 AND 2012 AND order_status='order finished'
-  GROUP BY YEAR(order_date)
-  ORDER BY years;
-
-+-------+--------------------+
-| years | number_of_customer |
-+-------+--------------------+
-| 2009  |                585 |
-| 2010  |                593 |
-| 2011  |                581 |
-| 2012  |                594 |
-+-------+--------------------+
+   FROM dqlab_sales_store
+   WHERE YEAR(order_date) BETWEEN 2009 AND 2012 AND order_status='order finished'
+   GROUP BY YEAR(order_date)
+   ORDER BY years;
+   ```
+   ```sql
+   +-------+--------------------+
+   | years | number_of_customer |
+   +-------+--------------------+
+   | 2009  |                585 |
+   | 2010  |                593 |
+   | 2011  |                581 |
+   | 2012  |                594 |
+   +-------+--------------------+
+   ```
 
