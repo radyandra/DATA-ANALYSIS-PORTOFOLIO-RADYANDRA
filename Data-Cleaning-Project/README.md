@@ -108,12 +108,11 @@ Langkah:
 	WHERE Total_Spent='' OR Total_Spent='UNKNOWN';
 
 - Menghapus nilai kosong
-  Contoh Query:
-```sql
-DELETE 
-FROM cafe_sales2
-WHERE Item='' AND Payment_Method='' AND Location='' AND Transaction_Date='';
-
+	  Contoh Query:
+	```sql
+	DELETE 
+	FROM cafe_sales2
+	WHERE Item='' AND Payment_Method='' AND Location='' AND Transaction_Date='';
 - Menghapus kolom yang tidak diperlukan
 	Contoh Query:
 	```sql
