@@ -75,10 +75,12 @@ Kelompokkan total_penjualan berdasarkan kolom “quarter”, dan jangan lupa men
   WHERE status = 'Shipped'
   GROUP BY quarter
   ORDER BY quarter;
-
+  
+![revenue_totalorder](revenue_totalorder.png)
 
 ## Perhitungan growth penjualan dan revenue
 %Growth Penjualan = (6717 – 8694)/8694 = -22%
+
 %Growth Revenue = (607548320 – 799579310)/ 799579310 = -24%
 
 ## Mengetahui apakah jumlah customers xyz.com semakin bertambah
@@ -101,6 +103,8 @@ Kelompokkan total_penjualan berdasarkan kolom “quarter”, dan jangan lupa men
   ) AS tabel_b
   GROUP BY quarter
   ORDER BY quarter;
+
+![perubahan_jumlah_cust](perubahan_jumlah_cust.png)
 
 ## Mengetahui seberapa banyak customers tersebut yang sudah melakukan transaksi
 - Dari tabel customer, pilihlah kolom customerID, createDate dan tambahkan kolom baru dengan menggunakan fungsi QUARTER(…) untuk mengekstrak nilai quarter dari CreateDate dan beri nama “quarter”
@@ -130,6 +134,8 @@ Kelompokkan total_penjualan berdasarkan kolom “quarter”, dan jangan lupa men
   GROUP BY quarter
   ORDER BY quarter;
 
+![transaksi_cust](transaksi_cust.png)
+
 ## Mengetahui category produk apa saja yang paling banyak di-order oleh customers di Quarter-2
 - Dari kolom orders_2, pilih productCode, orderNumber, quantity, status
 - Tambahkan kolom baru dengan mengekstrak 3 karakter awal dari productCode yang merupakan ID untuk kategori produk; dan beri nama categoryID
@@ -156,6 +162,8 @@ Kelompokkan total_penjualan berdasarkan kolom “quarter”, dan jangan lupa men
   GROUP BY LEFT(productCode, 3)
   ORDER BY total_order DESC;
 
+![top_category_q2](top_category_q2.png)
+
 ## Mengetahui seberapa banyak customers yang tetap aktif bertransaksi setelah transaksi pertamanya
 - Dari tabel orders_1, tambahkan kolom baru dengan value “1” dan beri nama “quarter”
 - Dari tabel orders_2, pilihlah kolom customerID, gunakan distinct untuk menghilangkan duplikasi
@@ -174,6 +182,7 @@ Kelompokkan total_penjualan berdasarkan kolom “quarter”, dan jangan lupa men
       SELECT DISTINCT customerID
       FROM orders_2
   );
+![aktif_cust_after_q1](aktif_cust_after_q1.png)
 
 ## Kesimpulan
 1. Performance xyz.com menurun signifikan di quarter ke-2, terlihat dari nilai penjualan dan revenue yang drop hingga 20% dan 24%,
