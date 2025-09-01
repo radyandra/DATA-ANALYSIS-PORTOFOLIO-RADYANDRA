@@ -14,7 +14,7 @@ Proyek-proyek yang saya kerjakan selama mengikuti program beasiswa Digitalent da
 - **[Lihat Project](./Project-DigitalentXDQLab-Scholarship/Project-Data-Analysis-for-Retail)**
 
 #### 📌 Project: Data Analysis for B2B Retail
-- **[Lihat Project](./Project-DigitalentXDQLab-Scholarship/Project-Data-Analysis-for-B2B-Retail)**
+- **[Lihat Project](./Project-DigitalentXDQLab-Scholarship/Project-DataAnalysis-for-B2B-Retail)**
 
 ---
 
