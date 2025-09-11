@@ -38,7 +38,7 @@ Proyek pembersihan data menggunakan berbagai tools.
 - **Database**: MySQL
 - **Spreadsheet**: Excel (Power Query, Pivot Table)
 - **Visualization**: Tableau
-- **Version Control**: Git, GitHub
+- **Version Control**: GitHub
 
 ---
 
